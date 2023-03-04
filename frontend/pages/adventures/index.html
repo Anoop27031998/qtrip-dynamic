@@ -152,8 +152,9 @@
             let duration = event.target.value;
             document.getElementById("duration-select").selectedIndex = 0;
 
-            filters["duration"].push(duration);
-            filters["duration"] = filters["duration"].filter(onlyUnique);
+            //filters["duration"].push(duration);
+            //filters["duration"] = filters["duration"].filter(onlyUnique);
+            filters.duration = duration;
 
             /*generateFilterPillsAndUpdateDOM(filters);*/
             let filteredAdventures = filterFunction(adventures, filters);
@@ -167,9 +168,10 @@
             // 1. Change the DOM to clear the Duration filter. Refer clearCategory() below
             // 2. Invoke saveFiltersToLocalStorage here
             document.getElementById("data").textContent = "";
-            /*document.getElementById("category-list").textContent = "";*/
+            document.getElementById("category-list").textContent = "";
+            document.getElementById("duration-select").selectedIndex = 0;
 
-            filters["duration"] = [];
+            filters["duration"] = "";
             let filteredAdventures = filterFunction(adventures, filters);
             addAdventureToDOM(filteredAdventures)
 
