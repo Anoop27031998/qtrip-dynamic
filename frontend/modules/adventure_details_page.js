@@ -31,8 +31,8 @@ async function fetchAdventureDetails(adventureId) {
 function addAdventureDetailsToDOM(adventure) {
   // TODO: MODULE_ADVENTURE_DETAILS
   // 1. Add the details of the adventure to the HTML DOM
-  document.getElementById("adventure-name").innerHTML = `${adventure.name}`;
-  document.getElementById("adventure-subtitle").innerHTML = `${adventure.subtitle}`;
+  document.getElementById("adventure-name").innerHTML = adventure.name;
+  document.getElementById("adventure-subtitle").innerHTML = adventure.subtitle;
   
 
   adventure.images.map((image)=>{
@@ -55,7 +55,7 @@ function addBootstrapPhotoGallery(images) {
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div  id="carousel-inner">
+  <div  class="carousel-inner" id="carousel-inner">
     
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
